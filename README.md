@@ -1,16 +1,44 @@
-# chat_gpt
+# chatbot_using_chatgpt3
 
-A new Flutter project.
+Flutter project.
 
 ## Getting Started
+This repository contains the source code for a Flutter-based chatbot application that integrates with the GPT (Generative Pre-trained Transformer) API for natural language processing and utilizes Firebase Authentication for user authentication.
 
-This project is a starting point for a Flutter application.
+The application provides a user-friendly interface for users to interact with the chatbot. The integration of the GPT API ensures powerful natural language understanding and generation, while Firebase Authentication ensures secure user authentication.
 
-A few resources to get you started if this is your first Flutter project:
+## Desain ui figma
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+![figma chatbot](https://github.com/Fannannf/flutter-chatbot-using-chatgpt3/assets/57026015/dd1898b2-5853-4dda-aa29-5d08fba2a1fc)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Features
+- **GPT API Integration:** Leverage the GPT API for natural language processing.
+- **Firebase Authentication:**  Implement user authentication and secure user data with Firebase.
+
+## Setup
+Follow these steps to set up and run the application locally.
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Fannannf/flutter-chatbot-using-chatgpt3.git
+
+2. Navigate to the project directory:
+   ```bash
+   cd flutter-chatbot-using-chatgpt3
+   
+3. Install dependencies:
+   ```bash
+   flutter pub get
+
+4. Add your ChatGPT token to the /lib/service/ai_handler.dart folder.
+   ```bash
+   final _openAI = OpenAI.instance.build(
+    token: 'YOUR-TOKEN CHATGPT',
+    baseOption: HttpSetup(
+      receiveTimeout: const Duration(seconds: 60),
+      connectTimeout: const Duration(seconds: 60),
+    ),
+
+5. Replace the google-service.json file in the /android/app/ directory with the google-service.json file from your Firebase project
